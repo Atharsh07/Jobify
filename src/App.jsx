@@ -13,13 +13,17 @@ import Orders from "./pages/orders/Orders";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import MyGigs from "./pages/myGigs/MyGigs";
+import NotFound from "./pages/NotFound";
+import NonContact from "./components/NonContact/NonContact";
 
 function App() {
   const Layout = () => {
     return (
       <div className="app">
         <Navbar />
-        <Outlet />
+        <div className="page-content">
+          <Outlet />
+        </div>
         <Footer />
       </div>
     );
@@ -62,6 +66,10 @@ function App() {
           path: "/gig/:id",
           element: <Gig />,
         },
+        {
+          path: "/non-contact",
+          element: <NonContact />,
+        },
       ],
     },
     {
@@ -71,6 +79,10 @@ function App() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "*", // This route will catch all undefined paths
+      element: <NotFound />, // Display the 404 page
     },
   ]);
 
