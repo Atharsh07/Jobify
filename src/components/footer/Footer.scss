@@ -2,44 +2,73 @@
   display: flex;
   justify-content: center;
   color: #666;
-  margin: 50px 0px;
+  background-color: #f5f5f5; /* Subtle background color for contrast */
+  padding: 50px 0;
+  margin-top: 50px;
+  position: relative; /* For positioning animations */
 
   img {
     width: 24px;
     height: 24px;
+    transition: transform 0.3s ease; /* Smooth hover effect for icons */
   }
 
   .container {
     width: 1400px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
     .top {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start; /* Align items at the start for a cleaner look */
+      gap: 30px; /* Added gap for spacing */
+
       .item {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+
         h2 {
-          font-size: 16px;
-          color: #555;
+          font-size: 18px;
+          color: #333;
+          font-weight: bold; /* Increased weight for better visibility */
+          margin-bottom: 10px;
         }
+
         span {
           font-weight: 300;
+          transition: color 0.3s ease;
+        }
+
+        &:hover {
+          transform: translateY(-5px); /* Slight upward movement on hover */
+          h2 {
+            color: #1dbf73; /* Change color on hover for engagement */
+          }
+          span {
+            color: #333;
+          }
         }
       }
     }
 
     hr {
-      margin: 50px 0px;
-      height: 0;
-      border: 1px solid #ebe9e9;
+      margin: 50px 0;
+      border: none;
+      border-top: 1px solid #ebe9e9;
+      transition: width 0.4s ease; /* Smooth transition effect for separator */
+      width: 100%;
     }
+
     .bottom {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
       .left {
-        width: max-content;
         display: flex;
         align-items: center;
         gap: 20px;
@@ -47,10 +76,11 @@
         span {
           font-size: 13px;
           white-space: nowrap;
+          transition: color 0.3s ease;
         }
       }
+
       .right {
-        width: max-content;
         display: flex;
         align-items: center;
         gap: 30px;
@@ -58,14 +88,67 @@
         .social {
           display: flex;
           gap: 20px;
+
+          img {
+            cursor: pointer; /* Pointer cursor for better UX */
+            &:hover {
+              transform: scale(1.2); /* Scale effect on hover */
+              filter: brightness(1.2); /* Brighten on hover for effect */
+            }
+          }
         }
 
         .link {
           display: flex;
           align-items: center;
           gap: 10px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #1dbf73; /* Change text color on hover */
+          }
         }
       }
+    }
+  }
+
+  /* Animation Keyframes for fade-in effect */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Apply fade-in animation to the footer */
+  &.animate {
+    animation: fadeInUp 1s ease-in-out;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+      padding: 0 20px; /* Padding for smaller screens */
+    }
+
+    .top, .bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center; /* Center align text on smaller screens */
+      gap: 20px;
+    }
+
+    .right {
+      flex-direction: column;
+    }
+
+    hr {
+      margin: 30px 0;
     }
   }
 }

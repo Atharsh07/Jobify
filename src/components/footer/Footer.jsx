@@ -53,14 +53,14 @@ function Footer() {
           </div>
           <div className="item">
             <h2>More From Jobify</h2>
-            <span>Liverr Business</span>
-            <span>Liverr Pro</span>
-            <span>Liverr Logo Maker</span>
-            <span>Liverr Guides</span>
+            <span>Jobify Business</span>
+            <span>Jobify Pro</span>
+            <span>Jobify Logo Maker</span>
+            <span>Jobify Guides</span>
             <span>Get Inspired</span>
-            <span>Liverr Select</span>
+            <span>Jobify Select</span>
             <span>ClearVoice</span>
-            <span>Liverr Workspace</span>
+            <span>Jobify Workspace</span>
             <span>Learn</span>
             <span>Working Not Working</span>
           </div>
@@ -68,8 +68,8 @@ function Footer() {
         <hr />
         <div className="bottom">
           <div className="left">
-            <h2>liverr</h2>
-            <span>© Liverr International Ltd. 2023</span>
+            <h2>Jobify</h2>
+            <span>© Jobify International Ltd. 2023</span>
           </div>
           <div className="right">
             <div className="social">
